@@ -61,24 +61,24 @@ export default function ProjectPage() {
           type: "spring",
           bounce: 0.5
         }}
-        className="text-3xl md:text-5xl font-bold text-green-400 mt-32 mb-12 text-center"
+        className="text-3xl md:text-5xl font-bold text-green-400 mb-12 text-center"
       >
         <motion.div
-          initial={{ scale: 0.5 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 0.5 }}
-          className="text-wrap"
-        >
-          <motion.span
-            whileHover={{ 
-              scale: 1.1,
-              color: "#22c55e",
-              transition: { duration: 0.2 }
-            }}
-          >
-            {'{ Projects }'}
-          </motion.span>
-        </motion.div>
+                    initial={{ scale: 0.5 }}
+                    animate={{ scale: 1 }}
+                    transition={{ duration: 0.5 }}
+                    className="text-3xl md:text-5xl font-bold mt-32 mb-12 inline-block"
+                  >
+                    <motion.span
+                      whileHover={{
+                        scale: 1.1,
+                        transition: { duration: 0.2 },
+                      }}
+                      className="bg-gradient-to-r from-green-400 via-blue-500 to-purple-500 text-transparent bg-clip-text"
+                    >
+                      {'{ Projects }'}
+                    </motion.span>
+                  </motion.div>
       </motion.h1>
 
       <div className="space-y-32 p-12">
