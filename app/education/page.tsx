@@ -160,10 +160,10 @@ const educationData = [
     timeColor: "text-blue-400",
     dotColor: "bg-blue-400",
     points: [
-      "Certoficate of Appreciation Winter Camps PSE school.",
-      "Certificate of Achievement as Presenter at the 5th FSD Student Forum.",
-      "Certificate has successfully participated in a computer course for school of Business.",
-      "Certificate of Achievement as Speaking English in the Foundation Studies Division."
+      "Certificate of Appreciation for Winter Camps at PSE School.",
+"Certificate of Achievement as a Presenter at the 5th FSD Student Forum.",
+"Certificate of Completion for successfully participating in a Computer Course at the School of Business.",
+"Certificate of Achievement for English Speaking in the Foundation Studies Division."
     ]
   },
   {

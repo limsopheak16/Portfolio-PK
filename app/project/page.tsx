@@ -29,16 +29,22 @@ export default function ProjectPage() {
     },
     {
       title: 'Blog Post',
-      description: 'Develop a responsive website as an online survey to gather valuable feedback from users. The website should include a user-friendly form that can be easily accessed from any device, ensuring a seamless experience for all respondents. Once the data is collected, a dynamic dashboard should be created to visualize the survey results in real-time.',
+      description: 'A daily blog is like a captivating diary shared with the world, where each entry unveils a new chapter of the author’s life. It is a vibrant tapestry woven with personal anecdotes, daily musings, and thought-provoking insights that resonate with readers.',
       image: '/image/blogpost.png',
       link: 'https://blogpost-one-rho.vercel.app/',
     },
     {
-      title: 'Create Short Urls',
-      description: 'The URL Shortener Service is a web application that allows users to shorten long URLs into concise, manageable links. This service is beneficial for sharing links on social media, emails, and other platforms where brevity is essential. The project will include both front-end and back-end components, ensuring a seamless user experience.',
-      image: '/image/shorttenerUrl.png',
-      link: 'https://link-shorten-two-gx8i.vercel.app/',
+      title: 'Online Calcuator',
+      description: 'This calculator helps you solve any math problems you need. You can do simple math like adding and subtracting, or harder math like square roots, powers, and angle functions (sin, cos, tan). Try it out to see how it works—it’s good for school or everyday use!',
+      image: '/image/calcuator.png',
+      link: 'https://calculator-navy-nu-52.vercel.app/',
     },
+    {
+      title: 'Weather',
+      description: 'This project is a weather website that allows you to view today’s weather conditions. It also provides real-time updates and a simple interface to check temperature, humidity, and other weather details for your location',
+      image: '/image/weather.png',
+      link: 'https://weatherwebsite-pied.vercel.app/',
+    }
   ];
 
   return (
