@@ -28,10 +28,10 @@ export default function ProjectPage() {
       link: 'https://link-shorten-two-gx8i.vercel.app/',
     },
     {
-      title: 'Build Online Survey',
+      title: 'Blog Post',
       description: 'Develop a responsive website as an online survey to gather valuable feedback from users. The website should include a user-friendly form that can be easily accessed from any device, ensuring a seamless experience for all respondents. Once the data is collected, a dynamic dashboard should be created to visualize the survey results in real-time.',
-      image: '/image/Survey.webp',
-      link: 'https://build-online-survey-and-dashboard-display.vercel.app/',
+      image: '/image/blogpost.png',
+      link: 'https://blogpost-one-rho.vercel.app/',
     },
     {
       title: 'Create Short Urls',

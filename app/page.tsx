@@ -151,11 +151,9 @@ export default function Home() {
             animate="visible"
             className="text-gray-400 max-w-xl"
           >
-            I&apos;m a passionate software developer specializing in full stack
-            development. My portfolio reflects my journey of creativity,
-            continuous learning, and innovation. I&apos;m eager to collaborate
-            and transform fresh ideas into impactful projects. Let&apos;s
-            connect!
+           I&apos;m a dedicated software developer who builds complete web applications. My work shows my growth, creativity, and new ideas.
+            I love working with others to turn good ideas into real projects.
+            Let&apos;s work together!
           </motion.p>
           
           {/* Call to action button */}

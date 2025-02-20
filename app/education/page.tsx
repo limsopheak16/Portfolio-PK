@@ -80,8 +80,7 @@ const EducationPage = () => {
           transition={{ delay: 0.3 }}
           className="text-gray-400 max-w-2xl mx-auto text-center mb-16 px-4"
         >
-          Embarking on a journey of continuous learning and growth, combining academic excellence 
-          with hands-on experience in cutting-edge technologies.
+          Always learning and growing by combining strong academics with practical experience in new technologies.
         </motion.p>
       </div>
 
@@ -138,21 +137,21 @@ const EducationPage = () => {
 const educationData = [
   {
     title: "PSE Institute",
-    subtitle: "Bachelor of Science in Computer Science",
-    timeline: "2020 - 2024",
+    subtitle: "Certificat de Compétence au Cambodge – Niveau 3 (C3) in Software Development",
+    timeline: "2023 - 2025",
     icon: GraduationCap,
     bgColor: "bg-green-500/10",
     iconColor: "text-green-400",
     timeColor: "text-green-400",
     dotColor: "bg-green-400",
     points: [
-      "Major in Software Engineering",
-      "GPA: 3.8/4.0",
-      "Research Assistant in AI Lab"
+      "Focus on Web Development & Mobile Development",
+      "Hands-on Projects and Real-world Applications",
+      "Building Practical Skills in Frontend, Backend, and Full-stack Development"
     ]
   },
   {
-    title: "Professional Certifications",
+    title: "Certifications",
     subtitle: "Industry-recognized certifications",
     timeline: "Ongoing",
     icon: Award,
@@ -161,9 +160,10 @@ const educationData = [
     timeColor: "text-blue-400",
     dotColor: "bg-blue-400",
     points: [
-      "AWS Certified Solutions Architect",
-      "Google Cloud Professional",
-      "Microsoft Azure Expert"
+      "Certoficate of Appreciation Winter Camps PSE school.",
+      "Certificate of Achievement as Presenter at the 5th FSD Student Forum.",
+      "Certificate has successfully participated in a computer course for school of Business.",
+      "Certificate of Achievement as Speaking English in the Foundation Studies Division."
     ]
   },
   {
@@ -176,26 +176,31 @@ const educationData = [
     timeColor: "text-purple-400",
     dotColor: "bg-purple-400",
     points: [
-      "Advanced React & Node.js",
-      "UI/UX Design Principles",
-      "Cloud Architecture Patterns"
+      "Codewars",
+      "Free code camp ",
+      "W3School"
     ]
   },
   {
-    title: "Academic Projects",
-    subtitle: "Hands-on experience",
-    timeline: "Throughout Academic Career",
+    title: "Language Skills",
+    subtitle: "Hands-on Experience",
+    timeline: "During My Academic Career",
     icon: Code,
     bgColor: "bg-orange-500/10",
     iconColor: "text-orange-400",
     timeColor: "text-orange-400",
     dotColor: "bg-orange-400",
     points: [
-      "Full-stack Web Applications",
-      "Machine Learning Models",
-      "Distributed Systems Design"
+      "HTML, CSS",
+      "JavaScript and Frameworks (Next.js, React.js, Express.js)",
+      "TypeScript",
+      "Tailwind CSS",
+      "Version Control Systems (Git)",
+      "Databases (MongoDB, PostgreSQL, MySQL - Workbench)",
+      "Project Management Tools (Jira, Trello)"
     ]
   }
+  
 ];
 
 export default EducationPage;
