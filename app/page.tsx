@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -15,9 +15,9 @@ export default function Home() {
       transition: {
         delay: 0.5 + i * 0.1,
         duration: 0.7,
-        ease: "easeOut"
-      }
-    })
+        ease: "easeOut",
+      },
+    }),
   };
 
   // Animation for the image container
@@ -30,9 +30,9 @@ export default function Home() {
       transition: {
         duration: 0.8,
         ease: "easeOut",
-        delay: 0.3
-      }
-    }
+        delay: 0.3,
+      },
+    },
   };
 
   // Floating animation
@@ -42,8 +42,8 @@ export default function Home() {
       duration: 4,
       repeat: Infinity,
       repeatType: "reverse" as const,
-      ease: "easeInOut"
-    }
+      ease: "easeInOut",
+    },
   };
 
   return (
@@ -58,7 +58,7 @@ export default function Home() {
         transition={{
           duration: 8,
           repeat: Infinity,
-          repeatType: "reverse"
+          repeatType: "reverse",
         }}
       />
       <motion.div
@@ -71,7 +71,7 @@ export default function Home() {
           duration: 6,
           repeat: Infinity,
           repeatType: "reverse",
-          delay: 1
+          delay: 1,
         }}
       />
 
@@ -151,11 +151,13 @@ export default function Home() {
             animate="visible"
             className="text-gray-400 max-w-xl"
           >
-           I&apos;m a dedicated software developer who builds complete web applications. My work shows my growth, creativity, and new ideas.
-            I love working with others to turn good ideas into real projects.
-            Let&apos;s work together!
+            I&apos;m a passionate full-stack developer who loves building
+            modern, user-friendly web applications from start to finish. My work
+            reflects creativity, growth, and a constant drive to learn new
+            technologies. I enjoy turning ideas into real, functional projects
+            that make an impact. Let&apos;s create something amazing together!
           </motion.p>
-          
+
           {/* Call to action button */}
           <Link href="/project" passHref>
             <motion.button
@@ -163,10 +165,10 @@ export default function Home() {
               custom={4}
               initial="hidden"
               animate="visible"
-              whileHover={{ 
-                scale: 1.05, 
+              whileHover={{
+                scale: 1.05,
                 backgroundColor: "rgb(22, 163, 74)",
-                color: "rgb(240, 253, 244)" 
+                color: "rgb(240, 253, 244)",
               }}
               whileTap={{ scale: 0.95 }}
               className="mt-6 bg-transparent border border-green-500 text-green-500 px-6 py-3 rounded-lg font-medium transition duration-300"
@@ -189,90 +191,57 @@ export default function Home() {
           >
             <div className="relative w-full h-full overflow-hidden rounded-lg">
               <Image
-                src="/image/myImage.jpg"
+                src="/image/me.jpg"
                 alt="Profile"
                 fill
                 className="object-cover rounded-lg shadow-lg shadow-red-300/50 transition-all duration-300"
               />
-              
+
               {/* Animated overlay */}
               <motion.div
                 initial={{ opacity: 0 }}
-                animate={{ 
+                animate={{
                   opacity: [0, 0.1, 0],
-                  x: ['0%', '100%']
+                  x: ["0%", "100%"],
                 }}
                 transition={{
                   duration: 2.5,
                   repeat: Infinity,
-                  repeatDelay: 1
+                  repeatDelay: 1,
                 }}
                 className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent transform -skew-x-12"
               />
             </div>
-            
+
             {/* Glow Effects */}
             <motion.div
               animate={{
                 opacity: [0.6, 1, 0.6],
-                scale: [1, 1.02, 1]
+                scale: [1, 1.02, 1],
               }}
               transition={{
                 duration: 3,
                 repeat: Infinity,
-                repeatType: "reverse"
+                repeatType: "reverse",
               }}
-              className="absolute inset-0 rounded-lg ring-2 ring-red-500 ring-offset-2 ring-offset-black/50 pointer-events-none"
+              className="absolute inset-0 rounded-lg ring-2 ring-blue-500 ring-offset-2 ring-offset-black/50 pointer-events-none"
             />
             <motion.div
               animate={{
                 opacity: [0.4, 0.8, 0.4],
-                scale: [1, 1.05, 1]
+                scale: [1, 1.05, 1],
               }}
               transition={{
                 duration: 4,
                 repeat: Infinity,
                 repeatType: "reverse",
-                delay: 0.5
+                delay: 0.5,
               }}
               className="absolute inset-0 rounded-lg ring-1 ring-red-400 ring-offset-1 ring-offset-black/30 blur-sm pointer-events-none"
             />
           </motion.div>
         </motion.div>
       </div>
-      
-      {/* Scrolling indicator */}
-      <motion.div
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 2, duration: 0.8 }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10"
-      >
-        <motion.div
-          animate={{
-            y: [0, 10, 0],
-            opacity: [0.3, 1, 0.3]
-          }}
-          transition={{
-            duration: 2,
-            repeat: Infinity,
-            repeatType: "reverse"
-          }}
-          className="w-6 h-10 border-2 border-green-400 rounded-full flex justify-center p-1"
-        >
-          <motion.div
-            animate={{
-              y: [0, 12, 0]
-            }}
-            transition={{
-              duration: 1.5,
-              repeat: Infinity,
-              repeatType: "reverse"
-            }}
-            className="w-1.5 h-3 bg-green-400 rounded-full"
-          />
-        </motion.div>
-      </motion.div>
     </main>
   );
 }

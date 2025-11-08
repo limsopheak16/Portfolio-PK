@@ -1,10 +1,30 @@
-// app/education/page.tsx
-'use client';
-
-import React from 'react';
-import { Book, Award, Code, GraduationCap, ChevronRight } from 'lucide-react';
-import { motion } from 'framer-motion';
-import Menubar from '@/components/ui/Menubar';
+"use client";
+import { Book, Award, GraduationCap, ChevronRight, Code } from "lucide-react";
+import { motion } from "framer-motion";
+import Menubar from "@/components/ui/Menubar";
+import {
+  FaHtml5,
+  FaCss3Alt,
+  FaReact,
+  FaNodeJs,
+  FaGitAlt,
+  FaDocker,
+  FaFigma,
+  FaJira,
+  FaLaravel,
+} from "react-icons/fa";
+import {
+  SiNextdotjs,
+  SiTypescript,
+  SiJavascript,
+  SiExpress,
+  SiTailwindcss,
+  SiMongodb,
+  SiPostgresql,
+  SiMysql,
+  SiPostman,
+  SiNotion,
+} from "react-icons/si";
 
 const EducationPage = () => {
   const containerVariants = {
@@ -12,9 +32,9 @@ const EducationPage = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2
-      }
-    }
+        staggerChildren: 0.2,
+      },
+    },
   };
 
   const itemVariants = {
@@ -23,10 +43,52 @@ const EducationPage = () => {
       y: 0,
       opacity: 1,
       transition: {
-        duration: 0.5
-      }
-    }
+        duration: 0.5,
+      },
+    },
   };
+
+  const techItemVariants = {
+    hidden: { scale: 0.8, opacity: 0 },
+    visible: {
+      scale: 1,
+      opacity: 1,
+      transition: {
+        duration: 0.4,
+      },
+    },
+  };
+
+  const technologiesIcons = [
+    // Frontend
+    { name: "HTML5", icon: FaHtml5, color: "text-orange-500" },
+    { name: "CSS3", icon: FaCss3Alt, color: "text-blue-500" },
+    { name: "React", icon: FaReact, color: "text-cyan-400" },
+    { name: "Next.js", icon: SiNextdotjs, color: "text-white" },
+    { name: "JavaScript", icon: SiJavascript, color: "text-yellow-400" },
+    { name: "TypeScript", icon: SiTypescript, color: "text-blue-500" },
+    { name: "Tailwind CSS", icon: SiTailwindcss, color: "text-cyan-400" },
+
+    // Backend
+    { name: "Node.js", icon: FaNodeJs, color: "text-green-500" },
+    { name: "Express.js", icon: SiExpress, color: "text-gray-300" },
+    { name: "Laravel", icon: FaLaravel, color: "text-red-500" },
+
+    // Database
+    { name: "PostgreSQL", icon: SiPostgresql, color: "text-blue-300" },
+    { name: "MongoDB", icon: SiMongodb, color: "text-green-500" },
+    { name: "MySQL", icon: SiMysql, color: "text-blue-400" },
+
+    // DevOps & Tools
+    { name: "Docker", icon: FaDocker, color: "text-blue-400" },
+    { name: "Git", icon: FaGitAlt, color: "text-orange-500" },
+    { name: "Postman", icon: SiPostman, color: "text-orange-500" },
+
+    // Methodology & Design
+    { name: "Figma", icon: FaFigma, color: "text-purple-500" },
+    { name: "Jira", icon: FaJira, color: "text-blue-400" },
+    { name: "Notion", icon: SiNotion, color: "text-white-400" },
+  ];
 
   return (
     <main className="bg-black min-h-screen text-white relative overflow-hidden w-full">
@@ -51,7 +113,7 @@ const EducationPage = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{
             duration: 0.8,
-            type: 'spring',
+            type: "spring",
             bounce: 0.5,
           }}
           className="text-center"
@@ -64,12 +126,12 @@ const EducationPage = () => {
           >
             <motion.span
               whileHover={{
-                scale: 1.1,
+                scale: 1.05,
                 transition: { duration: 0.2 },
               }}
-              className="bg-gradient-to-r from-green-400 via-blue-500 to-purple-500 text-transparent bg-clip-text"
+              className="bg-gradient-to-r from-cyan-400 via-teal-400 to-green-400 text-transparent bg-clip-text"
             >
-              {'{ Education }'}
+              Educations
             </motion.span>
           </motion.div>
         </motion.h1>
@@ -80,7 +142,8 @@ const EducationPage = () => {
           transition={{ delay: 0.3 }}
           className="text-gray-400 max-w-2xl mx-auto text-center mb-16 px-4"
         >
-          Always learning and growing by combining strong academics with practical experience in new technologies.
+          Always learning and growing by combining strong academics with
+          practical experience in new technologies.
         </motion.p>
       </div>
 
@@ -92,7 +155,7 @@ const EducationPage = () => {
         className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 px-4 mb-16"
       >
         {/* Education Cards */}
-        {educationData.map((item,) => (
+        {educationData.map((item) => (
           <motion.div
             key={item.title}
             variants={itemVariants}
@@ -101,9 +164,11 @@ const EducationPage = () => {
           >
             {/* Decorative corner */}
             <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-transparent to-gray-800/50 rounded-tr-xl" />
-            
+
             <div className="flex items-start space-x-4">
-              <div className={`p-3 ${item.bgColor} rounded-lg group-hover:scale-110 transition-transform duration-300`}>
+              <div
+                className={`p-3 ${item.bgColor} rounded-lg group-hover:scale-110 transition-transform duration-300`}
+              >
                 <item.icon className={`w-6 h-6 ${item.iconColor}`} />
               </div>
               <div className="flex-1">
@@ -116,14 +181,47 @@ const EducationPage = () => {
                   <br />
                   <span className={item.timeColor}>{item.timeline}</span>
                 </p>
-                <ul className="space-y-2 text-gray-300">
-                  {item.points.map((point, idx) => (
-                    <li key={idx} className="flex items-center space-x-2 group/item">
-                      <div className={`w-1 h-1 ${item.dotColor} rounded-full group-hover/item:scale-150 transition-transform duration-300`} />
-                      <span className="group-hover/item:text-white transition-colors duration-300">{point}</span>
-                    </li>
-                  ))}
-                </ul>
+
+                {item.title === "Technologies" ? (
+                  <motion.div
+                    variants={containerVariants}
+                    initial="hidden"
+                    animate="visible"
+                    className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-3 mt-4"
+                  >
+                    {technologiesIcons.map((tech) => (
+                      <motion.div
+                        key={tech.name}
+                        variants={techItemVariants}
+                        whileHover={{ scale: 1.1, y: -3 }}
+                        className="flex flex-col items-center gap-2 p-2 rounded-lg bg-gray-800/50 hover:bg-gray-700/50 transition-all duration-300 cursor-pointer group"
+                      >
+                        <tech.icon
+                          className={`w-8 h-8 ${tech.color} group-hover:scale-110 transition-transform duration-300`}
+                        />
+                        <span className="text-xs text-gray-400 group-hover:text-white transition-colors duration-300 text-center">
+                          {tech.name}
+                        </span>
+                      </motion.div>
+                    ))}
+                  </motion.div>
+                ) : (
+                  <ul className="space-y-2 text-gray-300">
+                    {item.points.map((point, idx) => (
+                      <li
+                        key={idx}
+                        className="flex items-center space-x-2 group/item"
+                      >
+                        <div
+                          className={`w-1 h-1 ${item.dotColor} rounded-full group-hover/item:scale-150 transition-transform duration-300`}
+                        />
+                        <span className="group-hover/item:text-white transition-colors duration-300">
+                          {point}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </div>
             </div>
           </motion.div>
@@ -137,7 +235,8 @@ const EducationPage = () => {
 const educationData = [
   {
     title: "PSE Institute",
-    subtitle: "Certificat de Compétence au Cambodge – Niveau 3 (C3) in Software Development",
+    subtitle:
+      "Certificat de Compétence au Cambodge – Niveau 3 (C3) in Software Development",
     timeline: "2023 - 2025",
     icon: GraduationCap,
     bgColor: "bg-green-500/10",
@@ -147,8 +246,8 @@ const educationData = [
     points: [
       "Focus on Web Development & Mobile Development",
       "Hands-on Projects and Real-world Applications",
-      "Building Practical Skills in Frontend, Backend, and Full-stack Development"
-    ]
+      "Building Practical Skills in Frontend, Backend, and Full-stack Development",
+    ],
   },
   {
     title: "Certifications",
@@ -160,11 +259,12 @@ const educationData = [
     timeColor: "text-blue-400",
     dotColor: "bg-blue-400",
     points: [
+      "Certificate of Completion in Full Stack Development at PSE Institute.",
       "Certificate of Appreciation for Winter Camps at PSE School.",
-"Certificate of Achievement as a Presenter at the 5th FSD Student Forum.",
-"Certificate of Completion for successfully participating in a Computer Course at the School of Business.",
-"Certificate of Achievement for English Speaking in the Foundation Studies Division."
-    ]
+      "Certificate of Achievement as a Presenter at the 5th FSD Student Forum.",
+      "Certificate of Completion – Computer Course, School of Business..",
+      "Certificate of Achievement for English Speaking in the Foundation Studies Division.",
+    ],
   },
   {
     title: "Online Learning",
@@ -176,13 +276,17 @@ const educationData = [
     timeColor: "text-purple-400",
     dotColor: "bg-purple-400",
     points: [
+      "Roadmap",
+      "Stack Overflow",
       "Codewars",
       "Free code camp ",
-      "W3School"
-    ]
+      "W3School",
+      "Youtube Tutorials",
+      "Udemy",
+    ],
   },
   {
-    title: "Language Skills",
+    title: "Technologies",
     subtitle: "Hands-on Experience",
     timeline: "During My Academic Career",
     icon: Code,
@@ -190,17 +294,8 @@ const educationData = [
     iconColor: "text-orange-400",
     timeColor: "text-orange-400",
     dotColor: "bg-orange-400",
-    points: [
-      "HTML, CSS",
-      "JavaScript and Frameworks (Next.js, React.js, Express.js)",
-      "TypeScript",
-      "Tailwind CSS",
-      "Version Control Systems (Git)",
-      "Databases (MongoDB, PostgreSQL, MySQL - Workbench)",
-      "Project Management Tools (Jira, Trello)"
-    ]
-  }
-  
+    points: [], // Points not used for this card, using tech icons instead
+  },
 ];
 
 export default EducationPage;
