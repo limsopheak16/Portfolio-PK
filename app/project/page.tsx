@@ -13,6 +13,13 @@ interface Project {
 export default function ProjectPage() {
   const projects: Project[] = [
     {
+      title: "New Hope Children's Homes (NHCH)",
+      description:
+        "New Hope Children's Homes (NHCH) is dedicated to providing a safe and caring environment for children in need. Through education, support, and community involvement, NHCH helps children build a brighter future.",
+      image: "/image/New Hope Children's Homes (NHCH).png",
+      link: "https://nhchkh.org/",
+    },
+    {
       title: "Build Online Survey",
       description:
         "Develop a responsive website as an online survey to gather valuable feedback from users. The website should include a user-friendly form that can be easily accessed from any device, ensuring a seamless experience for all respondents. Once the data is collected, a dynamic dashboard should be created to visualize the survey results in real-time.",
