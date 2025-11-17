@@ -16,7 +16,7 @@ export default function ProjectPage() {
       title: "New Hope Children's Homes (NHCH)",
       description:
         "New Hope Children's Homes (NHCH) is dedicated to providing a safe and caring environment for children in need. Through education, support, and community involvement, NHCH helps children build a brighter future.",
-      image: "/image/New Hope Children's Homes (NHCH).png",
+      image: "/image/logo-c1.jpg",
       link: "https://nhchkh.org/",
     },
     {
