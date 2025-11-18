@@ -121,21 +121,25 @@ export default function ContactPage() {
         <motion.h1
           initial={{ opacity: 0, y: -25 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, type: "spring", bounce: 0.5 }}
-          className="text-3xl md:text-5xl font-bold text-center"
+          transition={{
+            duration: 0.8,
+            type: "spring",
+            bounce: 0.5,
+          }}
+          className="text-4xl md:text-5xl font-bold text-center  mt-14"
         >
           <motion.span
             whileHover={{
-              scale: 1.1,
+              scale: 1.05,
               transition: { duration: 0.2 },
             }}
-            className="bg-gradient-to-r from-green-400 via-blue-500 to-purple-500 text-transparent bg-clip-text"
+            className="bg-gradient-to-r from-cyan-400 via-teal-400 to-green-400 text-transparent bg-clip-text"
           >
-            {"{ Get In Touch }"}
+            Get In Touch
           </motion.span>
         </motion.h1>
 
-        <p className="text-center text-gray-400 mt-4 mb-12 text-lg">
+        <p className="text-center text-gray-400 text-lg mt-10 ">
           Choose your preferred way to reach out
         </p>
 
