@@ -86,13 +86,13 @@ export default function Home() {
       </motion.div>
 
       {/* Main Content */}
-      <div className="min-h-screen flex flex-col lg:flex-row items-center px-4 sm:px-6 md:px-12 lg:px-24 pt-16 lg:pt-0 relative z-10">
+      <div className="min-h-screen flex flex-col lg:flex-row items-center px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 pt-16 lg:pt-0 relative z-10">
         {/* Left Content */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
-          className="w-full lg:flex-1 z-10 mb-8 lg:mb-0"
+          className="w-full lg:w-1/2 z-10 mb-8 lg:mb-0"
         >
           {/* Greeting Bubble */}
           <motion.div
@@ -104,14 +104,14 @@ export default function Home() {
           >
             <motion.span
               animate={floatingAnimation}
-              className="text-green-400 font-mono"
+              className="text-green-400 font-mono text-sm sm:text-base lg:text-lg"
             >
               Hi There! I&apos;m Sopheak
             </motion.span>
           </motion.div>
 
           {/* Main Heading - staggered reveal */}
-          <motion.h1 className="text-3xl sm:text-4xl lg:text-5xl font-mono mb-4 sm:mb-6 leading-tight">
+          <motion.h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl 2xl:text-5xl font-mono mb-4 sm:mb-6 lg:mb-8 leading-tight">
             <motion.span
               custom={0}
               variants={textVariants}
@@ -149,7 +149,7 @@ export default function Home() {
             custom={3}
             initial="hidden"
             animate="visible"
-            className="text-gray-400 max-w-xl"
+            className="text-gray-400 max-w-xl lg:max-w-2xl text-sm sm:text-base lg:text-base"
           >
             I&apos;m a passionate full-stack developer who loves building
             modern, user-friendly web applications from start to finish. My work
@@ -171,7 +171,7 @@ export default function Home() {
                 color: "rgb(240, 253, 244)",
               }}
               whileTap={{ scale: 0.95 }}
-              className="mt-6 bg-transparent border border-green-500 text-green-500 px-6 py-3 rounded-lg font-medium transition duration-300"
+              className="mt-4 lg:mt-6 bg-transparent border border-green-500 text-green-500 px-6 lg:px-8 py-2 lg:py-3 rounded-lg font-medium text-sm lg:text-base transition duration-300"
             >
               View My Projects →
             </motion.button>
@@ -183,11 +183,11 @@ export default function Home() {
           variants={imageContainerVariants}
           initial="hidden"
           animate="visible"
-          className="w-full lg:flex-1 relative"
+          className="w-full lg:w-1/2 relative flex justify-center lg:justify-end"
         >
           <motion.div
             animate={floatingAnimation}
-            className="relative w-[280px] h-[280px] sm:w-[320px] sm:h-[320px] md:w-[360px] md:h-[360px] lg:w-[400px] lg:h-[400px] mx-auto lg:ml-auto lg:left-28"
+            className="relative w-[240px] h-[240px] sm:w-[280px] sm:h-[280px] md:w-[320px] md:h-[320px] lg:w-[380px] lg:h-[380px] xl:w-[450px] xl:h-[450px] 2xl:w-[480px] 2xl:h-[480px]"
           >
             <div className="relative w-full h-full overflow-hidden rounded-lg">
               <Image
