@@ -22,17 +22,38 @@ export default function ProjectPage() {
       image: "/image/logo-c1.jpg",
       link: "https://nhchkh.org/",
       category: "Organization",
-      technologies: ["Next.js", "TypeScript", "Tailwind CSS", "PostgreSQL"],
+      technologies: [
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "PostgreSQL",
+        "Coolify",
+      ],
     },
     {
-      title: "Online Survey Platform",
+      title: "PSE Camp Attendance Management System (PCAMS)",
       description:
-        "Responsive survey website with real-time dashboard for data visualization and user feedback collection across all devices.",
-      image: "/image/Survey.webp",
-      link: "https://build-online-survey-and-dashboard-display.vercel.app/",
+        "A digital attendance tool for PSE camps that simplifies daily tracking, reduces paper errors, and keeps student records organized in one place.",
+      image: "/image/pcams.png",
+      link: "https://pcams.vercel.app/",
       category: "Web Application",
-      technologies: ["React", "Node.js", "MongoDB"],
+      technologies: [
+        "React.js",
+        "Tailwind CSS",
+        "Node.js",
+        "Jenkins",
+        "PostgreSQL",
+      ],
     },
+    // {
+    //   title: "Online Survey Platform",
+    //   description:
+    //     "Responsive survey website with real-time dashboard for data visualization and user feedback collection across all devices.",
+    //   image: "/image/Survey.webp",
+    //   link: "https://build-online-survey-and-dashboard-display.vercel.app/",
+    //   category: "Web Application",
+    //   technologies: ["React", "Node.js", "MongoDB"],
+    // },
     {
       title: "URL Shortener",
       description:
@@ -51,15 +72,15 @@ export default function ProjectPage() {
       category: "Blog",
       technologies: ["React", "Express", "MySQL"],
     },
-    {
-      title: "Weather Application",
-      description:
-        "Real-time weather website with intuitive interface displaying temperature, humidity, and detailed weather conditions.",
-      image: "/image/weather.png",
-      link: "https://weatherwebsite-pied.vercel.app/",
-      category: "Utility",
-      technologies: ["JavaScript", "API Integration", "CSS3"],
-    },
+    // {
+    //   title: "Weather Application",
+    //   description:
+    //     "Real-time weather website with intuitive interface displaying temperature, humidity, and detailed weather conditions.",
+    //   image: "/image/weather.png",
+    //   link: "https://weatherwebsite-pied.vercel.app/",
+    //   category: "Utility",
+    //   technologies: ["JavaScript", "API Integration", "CSS3"],
+    // },
   ];
 
   const containerVariants = {
