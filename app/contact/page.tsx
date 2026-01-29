@@ -2,7 +2,7 @@
 import { useState, type ChangeEvent, type FormEvent } from "react";
 import { motion } from "framer-motion";
 import Menubar from "@/components/ui/Menubar";
-import { Mail, Linkedin, Github, Twitter, Send } from "lucide-react";
+import { Mail, Linkedin, Github, Send } from "lucide-react";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -89,13 +89,6 @@ export default function ContactPage() {
       color: "from-gray-700 to-gray-900",
     },
     {
-      icon: Twitter,
-      label: "Twitter",
-      value: "@SopheakLim",
-      link: "https://x.com/SopheakLim45603",
-      color: "from-sky-400 to-blue-500",
-    },
-    {
       icon: Send,
       label: "Telegram",
       value: "@SopheakLim",
@@ -149,7 +142,7 @@ export default function ContactPage() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.8 }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 mb-16"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-16"
           >
             {socialAccounts.map((account, index) => {
               const Icon = account.icon;
@@ -290,7 +283,7 @@ export default function ContactPage() {
                         animate={{ scale: 1 }}
                         transition={{ delay: 0.2, type: "spring" }}
                       >
-                        ✅
+                        
                       </motion.span>
                       Your email client is opening. Please send the email to
                       complete the process.
@@ -307,7 +300,7 @@ export default function ContactPage() {
                         animate={{ scale: 1 }}
                         transition={{ delay: 0.2, type: "spring" }}
                       >
-                        ❌
+                        
                       </motion.span>
                       {error}
                     </motion.p>
@@ -317,7 +310,7 @@ export default function ContactPage() {
                 {/* Info message about mailto */}
                 <div className="mt-4 p-3 bg-blue-900/20 border border-blue-700/30 rounded-lg">
                   <p className="text-blue-300 text-xs text-center">
-                    📧 This form will open your email client to send the message
+                     This form will open your email client to send the message
                     directly.
                   </p>
                 </div>
@@ -344,7 +337,7 @@ export default function ContactPage() {
                   transition={{ repeat: Number.POSITIVE_INFINITY, duration: 2 }}
                   className="text-green-400 text-sm font-semibold"
                 >
-                  ✨ Available for freelance projects
+                   Available for freelance projects
                 </motion.div>
               </div>
             </motion.div>

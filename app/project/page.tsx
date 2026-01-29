@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Menubar from "@/components/ui/Menubar";
-import { ExternalLink, Eye } from "lucide-react";
+import { ExternalLink, Eye, Hammer, Clock } from "lucide-react";
 
 interface Project {
   title: string;
@@ -11,10 +11,37 @@ interface Project {
   link: string;
   category?: string;
   technologies?: string[];
+  status?: "completed" | "in-progress" | "planned";
+  progress?: number; // 0-100
 }
 
 export default function ProjectPage() {
   const projects: Project[] = [
+    {
+      title: "WMAD Platform",
+      description:
+        "A community platform where WMAD students and alumni can: Share memories from program experiences, Showcase portfolios for job interviews, Connect across generations for mentorship andPreserve knowledge from the WMAD program",
+      image: "/image/wmad.png",
+      link: "https://wmad-community.pages.dev/",
+      category: "Organization",
+      status: "in-progress",
+      technologies: [
+        "React 18",
+        "TypeScript",
+        "Vite",
+        "Tailwind CSS",
+        "Express.js",
+        "Node.js",
+        "PostgreSQL",
+        "Cloudflare Pages",
+        "Railway",
+        "Neon Console",
+        "Cloudflare R2",
+        "Upstash Redis",
+        "Resend",
+        "Socket.io",
+      ],
+    },
     {
       title: "New Hope Children's Homes",
       description:
@@ -33,7 +60,7 @@ export default function ProjectPage() {
     {
       title: "PSE Camp Attendance Management System (PCAMS)",
       description:
-        "A digital attendance tool for PSE camps that simplifies daily tracking, reduces paper errors, and keeps student records organized in one place.",
+        "My final year 2 academic project - A comprehensive digital attendance management system for PSE camps that revolutionizes daily tracking, eliminates paper-based errors, and maintains organized student records. This system demonstrates advanced full-stack development capabilities with real-time data processing and user-friendly interface design. *Note: Currently undergoing maintenance and will be available for viewing soon.*",
       image: "/image/pcams.png",
       link: "https://pcams.vercel.app/",
       category: "Web Application",
@@ -57,7 +84,7 @@ export default function ProjectPage() {
     {
       title: "URL Shortener",
       description:
-        "Web application for shortening long URLs into manageable links with analytics and user-friendly interface.",
+        "PSE X Bikay Link Shortener (PBLS) - My final year 1 academic project developed through a one-month collaboration with Bikay Company. This real-world project provided invaluable industry experience while creating a professional URL shortening service with analytics and user-friendly interface. The project demonstrates practical application of web development skills in a corporate partnership environment.",
       image: "/image/shorttenerUrl.png",
       link: "https://link-shorten-two-gx8i.vercel.app/",
       category: "Tool",
@@ -66,7 +93,7 @@ export default function ProjectPage() {
     {
       title: "Blog Platform",
       description:
-        "Modern blogging platform featuring personal anecdotes, daily musings, and interactive content management.",
+        "Hackathon-winning blog platform developed as a team project that secured 2nd place in the competition. This modern blogging platform features personal anecdotes, daily musings, and interactive content management, demonstrating our team's ability to collaborate under pressure and deliver a fully functional application within the hackathon timeframe. The project showcases effective teamwork and rapid development skills.",
       image: "/image/blogpost.png",
       link: "https://blogpost-one-rho.vercel.app/",
       category: "Blog",
@@ -201,7 +228,7 @@ export default function ProjectPage() {
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 lg:gap-10"
         >
           {projects.map((project, index) => (
             <motion.div
@@ -210,68 +237,111 @@ export default function ProjectPage() {
               whileHover={{ y: -8, transition: { duration: 0.3 } }}
               className="group cursor-pointer"
             >
-              <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-slate-200 dark:border-slate-700">
+              <div className="bg-white/95 dark:bg-slate-800/95 backdrop-blur-sm rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden border border-slate-200/50 dark:border-slate-700/50 group-hover:border-cyan-200/50 dark:group-hover:border-cyan-800/50 h-full flex flex-col">
                 {/* Image Container */}
-                <div className="relative h-48 overflow-hidden">
+                <div className="relative h-56 overflow-hidden bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-700 dark:to-slate-800">
                   <Image
                     src={project.image || "/placeholder.svg"}
                     alt={project.title}
                     fill
                     className="object-cover transform group-hover:scale-110 transition-transform duration-700"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
                   {/* Category Badge */}
                   <div className="absolute top-4 left-4">
-                    <span className="px-3 py-1 bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm text-slate-700 dark:text-slate-300 text-xs font-medium rounded-full border border-slate-200 dark:border-slate-600">
+                    <span className="px-3 py-1.5 bg-white/95 dark:bg-slate-800/95 backdrop-blur-md text-slate-700 dark:text-slate-300 text-xs font-semibold rounded-full border border-slate-200/70 dark:border-slate-600/70 shadow-sm">
                       {project.category}
                     </span>
                   </div>
+
+                  {/* Status Badge */}
+                  {project.status === "in-progress" && (
+                    <div className="absolute top-4 right-4">
+                      <motion.div
+                        initial={{ scale: 0 }}
+                        animate={{ scale: 1 }}
+                        transition={{ delay: 0.2, type: "spring", bounce: 0.5 }}
+                        className="flex items-center gap-1.5 px-3 py-1.5 bg-gradient-to-r from-amber-500 to-orange-500 text-white text-xs font-bold rounded-full shadow-lg backdrop-blur-sm"
+                      >
+                        <motion.div
+                          animate={{ rotate: [0, 360] }}
+                          transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+                        >
+                          <Hammer className="w-3 h-3" />
+                        </motion.div>
+                        <span>In Progress</span>
+                      </motion.div>
+                    </div>
+                  )}
                 </div>
 
                 {/* Content */}
-                <div className="p-6">
-                  <motion.h3
-                    className="text-xl font-bold text-slate-800 dark:text-white mb-3 line-clamp-2 group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors"
-                    whileHover={{ x: 2 }}
-                  >
-                    {project.title}
-                  </motion.h3>
+                <div className="p-7 flex-1 flex flex-col">
+                  <div className="flex-1 space-y-4">
+                    <motion.h3
+                      className="text-xl font-bold text-slate-800 dark:text-white line-clamp-2 group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors"
+                      whileHover={{ x: 2 }}
+                    >
+                      {project.title}
+                    </motion.h3>
 
-                  <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4 line-clamp-3">
-                    {project.description}
-                  </p>
+                    <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed line-clamp-3 group-hover:line-clamp-none transition-all duration-500 ease-in-out">
+                      {project.description}
+                    </p>
+                    {project.description.length > 150 && (
+                      <button className="text-cyan-500 hover:text-cyan-600 dark:text-cyan-400 dark:hover:text-cyan-300 text-xs font-medium mt-2 transition-colors">
+                        View More
+                      </button>
+                    )}
 
-                  {/* Technologies */}
-                  {project.technologies && (
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {project.technologies.map((tech, techIndex) => (
-                        <span
-                          key={techIndex}
-                          className="px-2 py-1 bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-400 text-xs rounded-md border border-slate-200 dark:border-slate-600"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  )}
+                    {/* Technologies */}
+                    {project.technologies && (
+                      <div className="flex flex-wrap gap-1.5">
+                        {project.technologies.map((tech, techIndex) => (
+                          <span
+                            key={techIndex}
+                            className="px-2.5 py-1 bg-slate-50 dark:bg-slate-700/50 text-slate-600 dark:text-slate-400 text-xs font-medium rounded-lg border border-slate-200/60 dark:border-slate-600/60"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+
+                                      </div>
 
                   {/* Action Button */}
-                  <motion.div
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-full inline-flex items-center justify-center gap-2 bg-slate-100 dark:bg-slate-700 hover:bg-cyan-500 hover:text-white text-slate-700 dark:text-slate-300 font-medium py-3 px-4 rounded-xl transition-all duration-300 group/btn border border-slate-200 dark:border-slate-600"
+                  <div className="mt-auto pt-4">
+                    <motion.div
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
                     >
-                      <Eye className="w-4 h-4" />
-                      <span>View Project</span>
-                      <ExternalLink className="w-4 h-4 transform group-hover/btn:translate-x-1 transition-transform" />
-                    </a>
-                  </motion.div>
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`w-full inline-flex items-center justify-center gap-2 font-semibold py-3.5 px-5 rounded-xl transition-all duration-300 group/btn border ${
+                          project.status === "in-progress"
+                            ? "bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white border-amber-500/50 shadow-lg shadow-amber-500/25"
+                            : "bg-slate-50 dark:bg-slate-700/50 hover:bg-cyan-500 hover:text-white text-slate-700 dark:text-slate-300 border-slate-200/60 dark:border-slate-600/60 hover:border-cyan-500/50"
+                        }`}
+                      >
+                        {project.status === "in-progress" ? (
+                          <>
+                            <Clock className="w-4 h-4" />
+                            <span>View Development</span>
+                          </>
+                        ) : (
+                          <>
+                            <Eye className="w-4 h-4" />
+                            <span>View Project</span>
+                          </>
+                        )}
+                        <ExternalLink className="w-4 h-4 transform group-hover/btn:translate-x-1 transition-transform" />
+                      </a>
+                    </motion.div>
+                  </div>
                 </div>
               </div>
             </motion.div>
@@ -283,13 +353,13 @@ export default function ProjectPage() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8, duration: 0.6 }}
-          className="text-center mt-16"
+          className="text-center mt-20"
         >
-          <div className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
+          <div className="bg-white/90 dark:bg-slate-800/90 backdrop-blur-md rounded-2xl p-10 border border-slate-200/50 dark:border-slate-700/50 shadow-xl max-w-2xl mx-auto">
             <h3 className="text-2xl font-bold text-slate-800 dark:text-white mb-4">
               Interested in working together?
             </h3>
-            <p className="text-slate-600 dark:text-slate-400 mb-6 max-w-md mx-auto">
+            <p className="text-slate-600 dark:text-slate-400 mb-8 max-w-md mx-auto leading-relaxed">
               Let&#39;s discuss how we can bring your next project to life with
               innovative solutions.
             </p>
@@ -297,7 +367,7 @@ export default function ProjectPage() {
               href="/contact"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-500 to-teal-500 text-white font-semibold py-3 px-8 rounded-xl shadow-lg hover:shadow-cyan-500/25 transition-all duration-300"
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-500 to-teal-500 text-white font-semibold py-3.5 px-8 rounded-xl shadow-lg hover:shadow-cyan-500/25 transition-all duration-300"
             >
               Get In Touch
               <ExternalLink className="w-4 h-4" />

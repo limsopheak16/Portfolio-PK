@@ -12,21 +12,13 @@ interface Experience {
 
 export default function ExperiencePage() {
   const experiences: Experience[] = [
-    // {
-    //   title: "Founder & Project Mentor – Junior Dev Community",
-    //   company: "Self-initiated Learning Community",
-    //   location: "Phnom Penh, Cambodia",
-    //   period: "July 13, 2025 - Present",
-    //   description:
-    //     "Founded and lead the Junior Dev Community with 3 co-mentors, supporting 6 students in learning web development through real projects. I design learning briefs and guide members step-by-step from frontend to backend development, helping them become full-stack developers. We hold online meetings, code reviews, and workshops to teach teamwork, project flow, and problem-solving, inspired by my training at PSE Institute.",
-    // },
     {
-      title: "Software Developer (IT Trainee)",
+      title: " Junior Software Developer",
       company: "I Apparel International Group",
       location: "🇰🇭 Phnom Penh, Cambodia",
       period: "June 02, 2025 - Present",
       description:
-        "Joined I Apparel International Group as an IT Trainee under a probation agreement in June 2025 and continued through multiple fixed-duration contracts. Currently an active member of the QMS (Quality Management System) development team, responsible for building new features, supporting and training end-users, fixing bugs, and enhancing system performance. Throughout my time here, I have developed strong teamwork, problem-solving, and technical skills while continuously learning from my team to improve as a full-stack developer.",
+        "Joined I Apparel International Group as a Junior Software Developer in June 2025. Currently a member of the QMS development team, contributing to new feature development, end-user support and training, and system performance improvements. Gained strong teamwork, problem-solving, and full-stack development skills through hands-on experience",
     },
     {
       title: "Freelance Web Developer – NGO Project",

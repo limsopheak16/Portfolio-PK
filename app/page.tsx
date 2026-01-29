@@ -1,11 +1,14 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Menubar from "@/components/ui/Menubar";
 import Link from "next/link";
 
 export default function Home() {
+  const [isHovering, setIsHovering] = useState(false);
+
   // Animation variants for text elements
   const textVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -129,7 +132,7 @@ export default function Home() {
               animate="visible"
               className="inline-block"
             >
-              <span className="text-green-400">developer.</span> Launch And
+              <span className="text-green-400">Developer.</span> Launch And
             </motion.span>
             <br />
             <motion.span
@@ -139,7 +142,7 @@ export default function Home() {
               animate="visible"
               className="inline-block"
             >
-              Grow <span className="text-white">Project best</span>
+              Growing <span className="text-white">Projects</span>
             </motion.span>
           </motion.h1>
 
@@ -151,11 +154,12 @@ export default function Home() {
             animate="visible"
             className="text-gray-400 max-w-xl lg:max-w-2xl text-sm sm:text-base lg:text-base"
           >
-            I&apos;m a passionate full-stack developer who loves building
+            I am a passionate full-stack developer with experience building
             modern, user-friendly web applications from start to finish. My work
-            reflects creativity, growth, and a constant drive to learn new
-            technologies. I enjoy turning ideas into real, functional projects
-            that make an impact. Let&apos;s create something amazing together!
+            demonstrates creativity, problem-solving, and a drive to learn and
+            apply new technologies. I specialize in turning ideas into
+            functional projects that deliver real value. Let&apos;s build
+            something impactful together!
           </motion.p>
 
           {/* Call to action button */}
@@ -189,12 +193,87 @@ export default function Home() {
             animate={floatingAnimation}
             className="relative w-[240px] h-[240px] sm:w-[280px] sm:h-[280px] md:w-[320px] md:h-[320px] lg:w-[380px] lg:h-[380px] xl:w-[450px] xl:h-[450px] 2xl:w-[480px] 2xl:h-[480px]"
           >
-            <div className="relative w-full h-full overflow-hidden rounded-lg">
-              <Image
-                src="/image/me.jpg"
-                alt="Profile"
-                fill
-                className="object-cover rounded-lg shadow-lg shadow-red-300/50 transition-all duration-300"
+            <div className="relative w-full h-full overflow-hidden rounded-lg cursor-pointer"
+                 onMouseEnter={() => setIsHovering(true)}
+                 onMouseLeave={() => setIsHovering(false)}
+                 onClick={() => setIsHovering(!isHovering)}>
+              <motion.div
+                animate={{ 
+                  opacity: isHovering ? 0 : 1,
+                  scale: isHovering ? 0.8 : 1,
+                  rotate: isHovering ? -5 : 0
+                }}
+                transition={{ duration: 0.4, ease: "easeInOut" }}
+                className="absolute inset-0"
+              >
+                <Image
+                  src="/image/me.jpg"
+                  alt="Profile"
+                  fill
+                  className="object-cover rounded-lg shadow-lg shadow-red-300/50"
+                />
+              </motion.div>
+              <motion.div
+                animate={{ 
+                  opacity: isHovering ? 1 : 0,
+                  scale: isHovering ? 1 : 1.1,
+                  rotate: isHovering ? 0 : 5
+                }}
+                transition={{ duration: 0.4, ease: "easeInOut" }}
+                className="absolute inset-0"
+              >
+                <Image
+                  src="/image/Sopheak-Lim.png"
+                  alt="Real Photo"
+                  fill
+                  className="object-cover rounded-lg shadow-lg "
+                />
+              </motion.div>
+              
+              {/* Interactive overlay effect */}
+              <motion.div
+                animate={{
+                  opacity: isHovering ? 1 : 0,
+                  scale: isHovering ? 1 : 0.5
+                }}
+                transition={{ duration: 0.3, delay: isHovering ? 0 : 0.1 }}
+                className="absolute inset-0 bg-gradient-to-br  rounded-lg pointer-events-none"
+              />
+              
+              {/* Sparkle effects */}
+              {isHovering && (
+                <>
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0 }}
+                    animate={{ opacity: [0, 1, 0], scale: [0, 1, 0] }}
+                    transition={{ duration: 1.5, repeat: Infinity, ease: "easeOut" }}
+                    className="absolute top-4 left-4 w-2 h-2 bg-white rounded-full"
+                  />
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0 }}
+                    animate={{ opacity: [0, 1, 0], scale: [0, 1, 0] }}
+                    transition={{ duration: 1.5, repeat: Infinity, ease: "easeOut", delay: 0.3 }}
+                    className="absolute top-8 right-8 w-2 h-2 bg-white rounded-full"
+                  />
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0 }}
+                    animate={{ opacity: [0, 1, 0], scale: [0, 1, 0] }}
+                    transition={{ duration: 1.5, repeat: Infinity, ease: "easeOut", delay: 0.6 }}
+                    className="absolute bottom-6 left-8 w-2 h-2 bg-white rounded-full"
+                  />
+                </>
+              )}
+              
+              {/* Border glow effect */}
+              <motion.div
+                animate={{
+                  opacity: isHovering ? 1 : 0,
+                  boxShadow: isHovering 
+                    ? "0 0 20px rgba(59, 130, 246, 0.6), 0 0 40px rgba(59, 130, 246, 0.4)"
+                    : "0 0 0px rgba(59, 130, 246, 0)"
+                }}
+                transition={{ duration: 0.3 }}
+                className="absolute inset-0 rounded-lg pointer-events-none"
               />
 
               {/* Animated overlay */}
